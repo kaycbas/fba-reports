@@ -6,7 +6,7 @@ import React from 'react';
 // import MainContainer from './main/main_container';
 
 const App = () => (
-    <div>Hello, World!</div>
+    <div>Hello, World!!</div>
 );
 
 export default App;
