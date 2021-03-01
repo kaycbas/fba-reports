@@ -5,5 +5,5 @@ const password = '3FaC60pI5HNhC4K0';
 
 module.exports =  {
   mongoURI: `mongodb+srv://${username}:${password}@imperial-cluster.et9um.mongodb.net/${database}?retryWrites=true&w=majority`,
-  secretOrKey: 'secret',
+  secretOrKey: 'LM62EAxNDH',
 }
