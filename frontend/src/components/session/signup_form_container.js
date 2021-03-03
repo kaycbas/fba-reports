@@ -1,11 +1,9 @@
 import React, { useState, useEffect } from 'react';
-import { connect } from 'react-redux';
 import { signup, clearSessionErrors } from '../../actions/session_actions';
-import { withRouter, useHistory } from 'react-router-dom';
 import { Link } from 'react-router-dom';
+import { connect } from 'react-redux';
 
 function SignupForm ({ currentUser, errors, signup , clearErrors}) {
-    const history = useHistory();
     const [email, setEmail] = useState('');
     const [password, setPassword] = useState('');
     const [passwordConfirmation, setPasswordConfirmation] = useState('');
