@@ -5,9 +5,9 @@ import { connect } from 'react-redux';
 
 function Navbar({ logoutUser }) {
     return (
-        <div>
+        <div className="navbar-wrapper">
             <h1>Imperial Flippers</h1>
-            <button onClick={() => logoutUser()}>Sign Out</button>
+            <div className="signout-btn" onClick={() => logoutUser()}>Sign Out</div>
         </div>
     )
 }
