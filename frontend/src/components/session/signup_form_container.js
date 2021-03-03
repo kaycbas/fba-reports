@@ -35,31 +35,29 @@ function SignupForm ({ currentUser, errors, signup , clearErrors}) {
     }
 
     return (
-        <div>
-            <p>Sign Up</p>
-            <form className="signup-form" onSubmit={signupUser}>
+        <div className="session-wrapper">
+            <form className="session-form" onSubmit={signupUser}>
+                <h3 className='session-header'>Sign Up</h3>
                 {renderErrors()}
-                <div>
-                    <input type="text"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="Email"
-                    />
-                    <br/>
-                    <input type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        placeholder="Password"
-                    />
-                    <input type="password"
-                        value={passwordConfirmation}
-                        onChange={(e) => setPasswordConfirmation(e.target.value)}
-                        placeholder="Confirm Password"
-                    />
-                    <br/>
-                    <input type="submit" value="Submit" />
-                    <Link className="session-switch-link" to="/signin">Already have an account? Sign in now</Link>
+                <input type="text"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Email"
+                />
+                <input type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Password"
+                />
+                <input type="password"
+                    value={passwordConfirmation}
+                    onChange={(e) => setPasswordConfirmation(e.target.value)}
+                    placeholder="Confirm Password"
+                />
+                <div className="submit-btn">
+                    <input className="submit-btn" type="submit" value="Submit" />
                 </div>
+                <Link className="session-switch-link" to="/signin">Already have an account? Sign in &gt;</Link>
             </form>
         </div>
     )

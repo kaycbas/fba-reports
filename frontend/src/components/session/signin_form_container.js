@@ -34,26 +34,24 @@ function SigninForm ({ currentUser, login, errors, clearErrors }) {
     }
 
     return (
-        <div>
-            <p>Sign In</p>
-            <form className="signin-form" onSubmit={handleSubmit}>
+        <div className="session-wrapper">
+            <form className="session-form" onSubmit={handleSubmit}>
+                <h3 className='session-header'>Sign In</h3>
                 {renderErrors()}
-                <div>
-                    <input type="text"
-                        value={email}
-                        onChange={(e) => setEmail(e.target.value)}
-                        placeholder="Email"
-                    />
-                    <br/>
-                    <input type="password"
-                        value={password}
-                        onChange={(e) => setPassword(e.target.value)}
-                        placeholder="Password"
-                    />
-                    <br/>
-                    <input type="submit" value="Submit" />
-                    <Link className="session-switch-link" to="/signup">Sign up now &gt;</Link>
+                <input type="text"
+                    value={email}
+                    onChange={(e) => setEmail(e.target.value)}
+                    placeholder="Email"
+                />
+                <input type="password"
+                    value={password}
+                    onChange={(e) => setPassword(e.target.value)}
+                    placeholder="Password"
+                />
+                <div className="submit-btn">
+                    <input className="submit-btn" type="submit" value="Submit" />
                 </div>
+                <Link className="session-switch-link" to="/signup">No account? Sign up &gt;</Link>
             </form>
         </div>
     )
