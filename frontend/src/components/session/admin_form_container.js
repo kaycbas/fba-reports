@@ -5,7 +5,6 @@ import { connect } from 'react-redux';
 
 function SigninForm ({ currentUser, login, errors, clearErrors }) {
     const email = 'admin@gmail.com';
-    // ?x3FE)#t+wRk
     const [password, setPassword] = useState('');
 
     useEffect(() => {

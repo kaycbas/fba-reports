@@ -5,7 +5,7 @@ import { Link } from 'react-router-dom';
 
 function Navbar({ loggedIn, logoutUser }) {
     const renderLogout = () => {
-        // if (!loggedIn) return null;
+        if (!loggedIn) return null;
         return <div className="signout-btn" onClick={() => logoutUser()}>Sign Out</div>
     }
 
@@ -25,4 +25,4 @@ const mapDispatchToProps = (dispatch) => ({
   logoutUser: () => dispatch(logout()),
 });
 
-export default connect(null, mapDispatchToProps)(Navbar);
+export default connect(mapStateToProps, mapDispatchToProps)(Navbar);
