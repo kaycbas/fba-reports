@@ -9,9 +9,16 @@ const passport = require('passport');
 const validateRegisterInput = require('../../validation/register');
 const validateLoginInput = require('../../validation/login');
 
-router.get("/test", (req, res) => res.json({
-    msg: "This is the users route"
-}));
+// router.get("/test", (req, res) => res.json({
+//     msg: "This is the users route"
+// }));
+
+router.get('/', passport.authenticate('jwt', {session: false}), (req, res) => {
+    if (req.user.id !== '6040030a57d92535c416626d') res.status(404).json({ users: 'No users found' });
+    User.find()
+        .then((users) => res.json(users))
+        .catch((_err) => res.status(404).json({ users: 'No users found' }));
+})
 
 // register a new user
 router.post('/register', (req, res) => {

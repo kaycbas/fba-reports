@@ -1,11 +1,16 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import { fetchUsers } from '../../actions/user_actions';
+import { connect } from 'react-redux';
 // import { logout } from '../../actions/session_actions';
-// import { connect } from 'react-redux';
 // import { Link } from 'react-router-dom';
 
-function Dashboard() {
+function Dashboard({ fetchUsers }) {
+    useEffect(() => {
+        fetchUsers();
+    });
+
     return (
-        <div>
+        <div className='admin-dashboard-wrapper'>
             <h1>Admin Dashboard</h1>
         </div>
     )
@@ -15,9 +20,9 @@ function Dashboard() {
 
 // });
 
-// const mapDispatchToProps = (dispatch) => ({
-//   logoutUser: () => dispatch(logout()),
-// });
+const mapDispatchToProps = (dispatch) => ({
+  fetchUsers: () => dispatch(fetchUsers()),
+});
 
-// export default connect(null, mapDispatchToProps)(Navbar);
-export default Dashboard;
+export default connect(null, mapDispatchToProps)(Dashboard);
+// export default Dashboard;
