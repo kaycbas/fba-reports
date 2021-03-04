@@ -1,0 +1,22 @@
+.admin-dashboard-header {
+    font-size: x-large;
+    padding: 20px;
+}
+
+.admin-dashboard-subheader {
+    font-size: large;
+    font-weight: bold;
+    text-decoration: underline;
+    padding-bottom: 10px;
+}
+
+.admin-dashboard-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.user-list-item {
+    padding-bottom: 5px;
+}
+
