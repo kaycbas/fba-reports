@@ -52,7 +52,7 @@ function SigninForm ({ currentUser, login, errors, clearErrors }) {
                     <input className="submit-btn" type="submit" value="Submit" />
                 </div>
                 <Link className="session-switch-link" to="/signup">No account? Sign up &gt;</Link>
-                <div onClick={() => login({email: 'kaycbas@gmail.com', password: 'apple123'})} className="session-switch-link">Quick login (this is temporary)</div>
+                <div onClick={() => login({email: 'kaycbas@gmail.com', password: 'apple123'})} className="session-switch-link">Auto-login (this is temporary)</div>
             </form>
         </div>
     )
