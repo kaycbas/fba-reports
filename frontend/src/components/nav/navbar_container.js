@@ -1,12 +1,18 @@
 import React from 'react';
 import { logout } from '../../actions/session_actions';
 import { connect } from 'react-redux';
-import { Link } from 'react-router-dom';
+import { Link, useLocation } from 'react-router-dom';
 
 function Navbar({ loggedIn, logoutUser }) {
+    const location = useLocation();
     const renderLogout = () => {
-        if (!loggedIn) return null;
-        return <div className="signout-btn" onClick={() => logoutUser()}>Sign Out</div>
+        if (loggedIn) {
+            return <div className="nav-btn" onClick={() => logoutUser()}>Sign Out</div>
+        } else if (location.pathname === '/admin') {
+            return <Link className="nav-btn" to="/signin">Home</Link>
+        } else {
+            return <Link className="nav-btn" to="/admin">Admin</Link>
+        }
     }
 
     return (

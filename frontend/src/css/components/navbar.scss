@@ -18,7 +18,7 @@
     margin: 0px 20px;
 }
 
-.signout-btn {
+.nav-btn {
     box-sizing: border-box;
     height: 30px;
     width: 100px;
@@ -27,16 +27,16 @@
     text-align: center;
     border-radius: 4px;
     max-width: 100px;
-    background-color: #1eabf9;
-    color: #fff;
+    background-color: #fff;
+    border: 1px solid black;
+    color: black;
     display: flex;
     align-items: center;
     justify-content: center;
     margin: 10px 20px;
 
-
     &:hover {
-        background: rgb(39, 127, 205);
+        background: rgb(235, 235, 235);
         cursor: pointer;
     }
 }

@@ -11,9 +11,10 @@ function Dashboard({ fetchUsers, users }) {
 
     const renderUsers = () => {
         if (users.length === 0) return null;
-        return users.map(user => (
-            <div className="user-list-item">{user.email}</div>
-        ));
+        return users.map(user => {
+            if (user.email === 'admin@gmail.com') return null;
+            return <div className="user-list-item">{user.email}</div>
+        });
     }
 
     return (
