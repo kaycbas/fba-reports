@@ -2,36 +2,66 @@
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 100px;
+    // margin-top: 50px;
+    padding: 50px;
 
-    border: 1px solid #dadada;
-    // padding: 1em 1em 1.5em;
-    border-radius: 8px;
+    // border: 1px solid #dadada;
+    // border-radius: 8px;
 
-    width: 350px;
+    width: 800px;
 }
 
 .step-header {
-    font-weight: bold;
-    padding: 5px;
+    font-size: xx-large;
+    padding-bottom: 20px;
 }
 
 .connection-instructions {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+
     li {
+        font-size: larger;
         list-style: decimal;
-        padding: 5px;
+        padding-bottom: 20px;
     }
 
     .step-dev-id {
         padding: 5px;
+        margin-bottom: 20px;
         border: 1px solid #dadada;
         border-radius: 8px;
+        width: 300px;
     }
 }
 
 .step-btn {
     margin: 5px;
-    padding: 5px;
+    margin: 20px;
+    padding: 5px 40px;
     border: 1px solid #dadada;
     border-radius: 8px;
+    // width: 100px;
+
+    &:hover {
+        background: rgb(235, 235, 235);
+        cursor: pointer;
+    }
+}
+
+.verify-btn {
+    margin: 5px;
+    margin: 20px;
+    padding: 5px 50px;
+    // border: 1px solid #dadada;
+    border-radius: 8px;
+    background-color: #1eabf9;
+    color: #fff;
+
+    &:hover {
+        background: rgb(39, 127, 205);
+        cursor: pointer;
+    }
 }

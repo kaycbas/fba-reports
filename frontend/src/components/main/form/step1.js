@@ -1,6 +1,8 @@
-import React from 'react'
+import React, { useState } from 'react'
 
 export default function Step1({ currentStep, next, prev }) {
+    const [verified, setVerified] = useState(false);
+
     if (currentStep !== 1) return null;
     return (
         <div className="step-wrapper">
@@ -10,9 +12,11 @@ export default function Step1({ currentStep, next, prev }) {
                 <li>Click the 'Authenticate New Developer' button and follow the authorization workflow.</li>
                 <li>When prompted, enter the below Developer ID.</li>
                 <div className="step-dev-id">HFJK543KJL5</div>
+                <li>Once complete, click the Verify button below to ensure a successful connection.</li>
             </div>
             <div className="step-ctrls">
-                <button className="step-btn" onClick={() => prev()}>Prev</button>
+                <button className="step-btn" onClick={() => prev()}>Previous</button>
+                <button className="verify-btn">Verify</button>
                 <button className="step-btn" onClick={() => next()}>Next</button>
             </div>
         </div>
