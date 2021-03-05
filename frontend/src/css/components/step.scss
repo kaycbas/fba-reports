@@ -11,8 +11,22 @@
     width: 350px;
 }
 
+.step-header {
+    font-weight: bold;
+    padding: 5px;
+}
+
 .connection-instructions {
-    
+    li {
+        list-style: decimal;
+        padding: 5px;
+    }
+
+    .step-dev-id {
+        padding: 5px;
+        border: 1px solid #dadada;
+        border-radius: 8px;
+    }
 }
 
 .step-btn {
