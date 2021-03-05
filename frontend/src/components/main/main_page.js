@@ -1,17 +1,23 @@
-import React from 'react';
+import React, { useState, useEffect } from 'react';
+import MasterForm from './form/master_form_container';
 
-class MainPage extends React.Component {
+function MainPage() {
+  const [started, setStarted] = useState('');
 
-  render() {
-    return (
-      <div>
-        <h1>~App~</h1>
-        <footer>
-          Copyright &copy; 2021 Imperial Flippers
-        </footer>
-      </div>
-    );
+  const renderWelcome = () => {
+    // conditional
+    return <div>Welcome, click start to begin.</div>
   }
+
+  const renderMasterForm = () => {
+
+  }
+
+  return (
+    <div className='main-wrapper'>
+      <MasterForm />
+    </div>
+  );
 }
 
 export default MainPage;
