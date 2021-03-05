@@ -1,0 +1,23 @@
+.step-wrapper {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    padding: 100px;
+
+    border: 1px solid #dadada;
+    // padding: 1em 1em 1.5em;
+    border-radius: 8px;
+
+    width: 350px;
+}
+
+.connection-instructions {
+    
+}
+
+.step-btn {
+    margin: 5px;
+    padding: 5px;
+    border: 1px solid #dadada;
+    border-radius: 8px;
+}

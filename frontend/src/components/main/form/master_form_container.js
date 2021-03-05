@@ -6,12 +6,11 @@ function MasterForm() {
     const [currentStep, setCurrentStep] = useState(1);
 
     const next = () => {
-        // conditional logic so it doesn't go too high
-        setCurrentStep(currentStep+1);
+        if (currentStep < 2) setCurrentStep(currentStep+1);
     }
 
     const prev = () => {
-        if (currentStep > 0) setCurrentStep(currentStep-1);
+        if (currentStep > 1) setCurrentStep(currentStep-1);
     }
 
     return (
