@@ -8,8 +8,8 @@ export default function Step1({ currentStep, next, prev }) {
         <div className="step-wrapper">
             <div className="step-header">Step 1</div>
             <div className="connection-instructions">
-                <li>Log into your Seller Central account as the primary account holder.</li>
-                <li>Click the 'Authenticate New Developer' button and follow the authorization workflow.</li>
+                <li>Go to the <a href="https://sellercentral.amazon.com/apps/manage">Manage your apps</a> page in Seller Central and log into your Amazon selling account as the primary account holder.</li>
+                <li>Click the 'Authorize new developer' button and follow the authorization workflow.</li>
                 <li>When prompted, enter the below Developer ID.</li>
                 <div className="step-dev-id">HFJK543KJL5</div>
                 <li>Once complete, click the Verify button below to ensure a successful connection.</li>
