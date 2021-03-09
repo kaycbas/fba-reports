@@ -12,7 +12,7 @@ export default function Step1({ currentStep, next, prev }) {
                 <li>Click the 'Authorize new developer' button and follow the authorization workflow.</li>
                 <li>When prompted, enter the below Developer ID.</li>
                 <div className="step-dev-id">HFJK543KJL5</div>
-                <li>Once complete, click the Verify button below to ensure a successful connection.</li>
+                <li>Once complete, click the Verify button below to validate that the connection was successful.</li>
             </div>
             <div className="step-ctrls">
                 <button className="step-btn" onClick={() => prev()}>Previous</button>
