@@ -18,6 +18,8 @@ router.get('/', (req, res) => {
     let amazon_state = req.query.amazon_state;
     let selling_partner_id = req.query.selling_partner_id;
 
+    console.log(`amazon_callback_uri: ${amazon_callback_uri}, amazon_state: ${amazon_state}, selling_partner_id: ${selling_partner_id}`)
+
     res.json({ amazon_callback_uri, amazon_state, selling_partner_id });
 })
 
