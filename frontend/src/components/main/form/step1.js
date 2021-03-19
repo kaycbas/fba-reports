@@ -11,8 +11,7 @@ export default function Step1({ currentStep, next, prev }) {
             <div className="authorize-btn-wrapper">
                 {/* <Link to='www.google.com'>Authorize link</Link> */}
                 <a className="authorize-btn" href="https://sellercentral.amazon.com/apps/authorize/consent?application_id=
-amzn1.application-oa2-client.b10b79de4d3f4a908aa313070b3c83c9
-" target="_blank">Authorize</a>
+amzn1.application-oa2-client.b10b79de4d3f4a908aa313070b3c83c9&version=beta" target="_blank">Authorize</a>
             </div>
             <div className="step-ctrls">
                 <button className="step-btn" onClick={() => prev()}>Previous</button>
