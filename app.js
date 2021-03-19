@@ -7,6 +7,7 @@ const path = require('path');
 require('./config/passport')(passport);
 
 const users = require("./routes/api/users");
+const authorize = require("./routes/api/authorize");
 
 const app = express();
 
@@ -23,6 +24,7 @@ app.use(bodyParser.json());
 app.use(passport.initialize());
 
 app.use("/api/users", users);
+app.use("/api/authorize", authorize);
 
 
 mongoose
