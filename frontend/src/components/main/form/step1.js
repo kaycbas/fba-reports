@@ -1,4 +1,5 @@
-import React, { useState } from 'react'
+import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 export default function Step1({ currentStep, next, prev }) {
     const [verified, setVerified] = useState(false);
@@ -7,16 +8,14 @@ export default function Step1({ currentStep, next, prev }) {
     return (
         <div className="step-wrapper">
             <div className="step-header">Step 1</div>
-            <div className="connection-instructions">
-                <li>Go to the <a href="https://sellercentral.amazon.com/apps/manage">Manage your apps</a> page in Seller Central and log into your Amazon selling account as the primary account holder.</li>
-                <li>Click the 'Authorize new developer' button and follow the authorization workflow.</li>
-                <li>When prompted, enter the below Developer ID.</li>
-                <div className="step-dev-id">HFJK543KJL5</div>
-                <li>Once complete, click the Verify button below to validate that the connection was successful.</li>
+            <div className="authorize-btn-wrapper">
+                {/* <Link to='www.google.com'>Authorize link</Link> */}
+                <a className="authorize-btn" href="https://sellercentral.amazon.com/apps/authorize/consent?application_id=
+amzn1.application-oa2-client.b10b79de4d3f4a908aa313070b3c83c9
+" target="_blank">Authorize</a>
             </div>
             <div className="step-ctrls">
                 <button className="step-btn" onClick={() => prev()}>Previous</button>
-                <button className="verify-btn">Verify</button>
                 <button className="step-btn" onClick={() => next()}>Next</button>
             </div>
         </div>
