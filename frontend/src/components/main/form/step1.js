@@ -10,8 +10,7 @@ export default function Step1({ currentStep, next, prev }) {
             <div className="step-header">Step 1</div>
             <div className="authorize-btn-wrapper">
                 {/* <Link to='www.google.com'>Authorize link</Link> */}
-                <a className="authorize-btn" href="https://sellercentral.amazon.com/apps/authorize/consent?application_id=
-amzn1.application-oa2-client.b10b79de4d3f4a908aa313070b3c83c9&version=beta" target="_blank">Authorize</a>
+                <a className="authorize-btn" href="https://sellercentral.amazon.com/apps/authorize/consent?application_id=amzn1.sp.solution.a6ce15fc-0aa6-477a-b7bd-51ea48583bb0&version=beta" target="_blank">Authorize</a>
             </div>
             <div className="step-ctrls">
                 <button className="step-btn" onClick={() => prev()}>Previous</button>
