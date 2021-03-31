@@ -2,6 +2,7 @@ const express = require('express');
 const router = express.Router();
 const mongoose = require('mongoose');
 const passport = require('passport');
+const axios = require('axios');
 
 // const validateProject = require('../../validation/projects');
 
@@ -19,12 +20,36 @@ router.get('/', (req, res) => {
     let amazon_state = req.query.amazon_state;
     let selling_partner_id = req.query.selling_partner_id;
 
-    console.log(`$$$$ FULL REQUEST $$$$: ${req.query}`);
+    console.log('----$$$ AUTHORIZE ROUTE $$$----:');
+    console.log(`Full reuqest: ${req.query}`);
+    console.log(`Full reuqest stringified: ${JSON.stringify(req.query)}`);
+    console.log(`Request keys: ${Object.keys(req.query)}`);
+    console.log(`Request values: ${Object.values(req.query)}`);
+    console.log('----$$$$$$$$$$----');
 
-    console.log(`PARAMETERS IN AUTHORIZE ROUTE: amazon_callback_uri: ${amazon_callback_uri}, amazon_state: ${amazon_state}, selling_partner_id: ${selling_partner_id}`)
+    fetchRefreshToken(req.query);
+
+    // console.log(`PARAMETERS IN AUTHORIZE ROUTE: amazon_callback_uri: ${amazon_callback_uri}, amazon_state: ${amazon_state}, selling_partner_id: ${selling_partner_id}`)
 
     res.json({ amazon_callback_uri, amazon_state, selling_partner_id });
 })
+
+function fetchRefreshToken(data) {
+    console.log(`post to amazon route: ${JSON.stringify(data)}`)
+    const payload = {
+        'grant_type': 'authorization_code',
+        'code': `${data.spapi_oauth_code}`,
+        'redirect_uri': 'https://imperialflippers.com/api/authorize/lwa',
+        'client_id': 'client_id',
+        'client_secret': 'client_secret'
+    };
+    axios.post('https://api.amazon.com/auth/o2/token', payload);
+}
+
+router.get('/lwa', (req, res) => {
+    console.log('#### RECEIVED REQUEST IN LWS ROUTE!! ####');
+    console.log(`LWA req: ${JSON.stringify(req)}`);
+});
 
 /*
 {"amazon_callback_uri":"[https://sellercentral.amazon.com/apps/authorize/confirm/amzn1.sp.solution.a6ce15fc-0aa6-477a-b7bd-51ea48583bb0",
