@@ -40,8 +40,8 @@ function fetchRefreshToken(data) {
         'grant_type': 'authorization_code',
         'code': `${data.spapi_oauth_code}`,
         'redirect_uri': 'https://imperialflippers.com/api/authorize/lwa',
-        'client_id': 'client_id',
-        'client_secret': 'client_secret'
+        'client_id': 'amzn1.application-oa2-client.b10b79de4d3f4a908aa313070b3c83c9',
+        'client_secret': '67234b506813f4369e562823e4476ee1a2b13342e0da731aca0e74443613d647'
     };
     axios.post('https://api.amazon.com/auth/o2/token', payload);
 }
