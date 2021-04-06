@@ -5,6 +5,12 @@ const passport = require('passport');
 const axios = require('axios');
 
 // const validateProject = require('../../validation/projects');
+let authCache = {
+    "amazon_callback_uri":"https://sellercentral.amazon.com/apps/authorize/confirm/amzn1.sp.solution.a6ce15fc-0aa6-477a-b7bd-51ea48583bb0",
+    "amazon_state":"MTYxNzM0MTgyNTIyMO-_ve-_ve-_ve-_vcmmOO-_vTfvv70577-977-977-9Qu-_ve-_ve-_vQRe77-9LQZY77-9KO-_vRZ6Ie-_vREi77-977-9cHBq77-9P--_vRrvv71bMz3vv70X77-9ZA5h77-977-977-9R--_ve-_ve-_vQLvv73vv70=",
+    "version":"beta",
+    "selling_partner_id":"AXC1J5HD8VVLB"
+};
 
 // OAuth route for Amazon authorization
 //
@@ -27,12 +33,30 @@ router.get('/', (req, res) => {
     console.log(`Request values: ${Object.values(req.query)}`);
     console.log('----$$$$$$$$$$----');
 
+    // store auth data in cache
+    // This should be stored under the user's ID to avoid accidentally accessing other ppl's data...
+    authCache = req.query;
+
     fetchRefreshToken(req.query);
 
     // console.log(`PARAMETERS IN AUTHORIZE ROUTE: amazon_callback_uri: ${amazon_callback_uri}, amazon_state: ${amazon_state}, selling_partner_id: ${selling_partner_id}`)
 
-    res.json({ amazon_callback_uri, amazon_state, selling_partner_id });
+    res.json({
+        amazon_callback_uri,
+        amazon_state,
+        selling_partner_id
+    });
 })
+
+router.get('/callback', (req, res) => {
+    if (Object.keys(authCache).length === 0) {
+        return res.status(400).json({
+            password: 'No auth callback.'
+        });
+    } else {
+        res.json(authCache);
+    }
+});
 
 function fetchRefreshToken(data) {
     console.log(`post to amazon route: ${JSON.stringify(data)}`)

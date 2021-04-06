@@ -1,6 +1,7 @@
 import { RECEIVE_CURRENT_USER, 
          RECEIVE_USER_LOGOUT, 
          RECEIVE_USER_SIGN_IN } from '../actions/session_actions';
+// import { RECEIVE_AMAZON_CALLBACK } from '../actions/auth_actions';
 
 const initialState = {
   isAuthenticated: false,
@@ -14,17 +15,22 @@ const SessionReducer = (state = initialState, action) => {
         ...state,
         isAuthenticated: !!action.currentUser,
         user: action.currentUser
-      };
+      }
     case RECEIVE_USER_LOGOUT:
       return {
         isAuthenticated: false,
         user: undefined
-      };
+      }
     case RECEIVE_USER_SIGN_IN:
       return {
         ...state,
         isSignedIn: true
       }
+    // case RECEIVE_AMAZON_CALLBACK:
+    //   return {
+    //     ...state,
+    //     amazonAuthCallback: action.payload.data.amazon_callback_uri
+    //   }
     default:
       return state;
   }
