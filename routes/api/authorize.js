@@ -75,15 +75,10 @@ router.get('/lwa', (req, res) => {
     console.log(`LWA req: ${JSON.stringify(req)}`);
 });
 
-/*
-{"amazon_callback_uri":"[https://sellercentral.amazon.com/apps/authorize/confirm/amzn1.sp.solution.a6ce15fc-0aa6-477a-b7bd-51ea48583bb0",
-"amazon_state":"MTYxNjU0NDcxNDk2Ne-_vVzvv71yL--_ve-_vdaIcGTvv73vv71bDhBI77-9Z1lNeQop77-9Bu-_ve-_ve-_ve-_vSbvv73vv70v77-9VcWG77-977-93onvv73vv73vv73vv71XJe-_ve-_vTDvv70p77-9WDBRDhnvv73MgO-_vTY=",
-"selling_partner_id":"AXC1J5HD8VVLB](https://sellercentral.amazon.com/apps/authorize/confirm/amzn1.sp.solution.a6ce15fc-0aa6-477a-b7bd-51ea48583bb0%22,%22amazon_state%22:%22MTYxNjU0NDcxNDk2Ne-_vVzvv71yL--_ve-_vdaIcGTvv73vv71bDhBI77-9Z1lNeQop77-9Bu-_ve-_ve-_ve-_vSbvv73vv70v77-9VcWG77-977-93onvv73vv73vv73vv71XJe-_ve-_vTDvv70p77-9WDBRDhnvv73MgO-_vTY=%22,%22selling_partner_id%22:%22AXC1J5HD8VVLB)"}
-*/
-
 module.exports = router;
 
 // --
+// Saved response:
 // {
 // "amazon_callback_uri":"https://sellercentral.amazon.com/apps/authorize/confirm/amzn1.sp.solution.a6ce15fc-0aa6-477a-b7bd-51ea48583bb0",
 // "amazon_state":"MTYxNzM0MTgyNTIyMO-_ve-_ve-_ve-_vcmmOO-_vTfvv70577-977-977-9Qu-_ve-_ve-_vQRe77-9LQZY77-9KO-_vRZ6Ie-_vREi77-977-9cHBq77-9P--_vRrvv71bMz3vv70X77-9ZA5h77-977-977-9R--_ve-_ve-_vQLvv73vv70=",
